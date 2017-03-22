@@ -1,15 +1,16 @@
 {
-  "name": "react-webpack-starter",
+  "name": "week-3-review",
   "version": "1.0.0",
-  "description": "Starter kit for React and Redux Pluralsight course by Cory House",
+  "description": "A review for the third week of Montana Code School",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel test:watch open:src lint:watch",
+    "start": "npm-run-all --parallel testonly:watch open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test": "npm run lint && npm run testonly",
+    "testonly": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "testonly:watch": "npm run test -- --watch"
   },
   "author": "Montana Code School",
   "license": "MIT",
@@ -63,6 +64,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Montana-Code-School/react-webpack-starter"
+    "url": "https://github.com/Montana-Code-School/week-3-review"
   }
 }
